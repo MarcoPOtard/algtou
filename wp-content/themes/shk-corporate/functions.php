@@ -118,5 +118,17 @@ function shk_corporate_after_import_setup() {
     update_option( 'page_for_posts', $blog_page_id->ID );	
 	
 }
-add_action( 'pt-ocdi/after_import', 'shk_corporate_after_import_setup' );	                     
+add_action( 'pt-ocdi/after_import', 'shk_corporate_after_import_setup' );
+
+
+// Menu de la page d'accueil informations utiles
+function register_menus_algerie_tours() {
+    register_nav_menus(
+        array(
+            'home-info-usefull' => __( 'Home Usefull Informations' ),
+//            'footer-menu' => __( 'Menu Footer' ),
+        )
+    );
+}
+add_action( 'init', 'register_menus_algerie_tours' );
 ?>

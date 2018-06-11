@@ -1,21 +1,62 @@
 @import url(fonts.css);
 
+/* ---- Commun ---- */
+/* - Boutons */
+.at-btn-more {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 18px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family:'source_sans_pro', Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: #ffc774;
+    transition: all 0.3s ease-in-out 0s;
+}
+.at-btn-more:hover,
+.at-btn-more:focus {
+    color: #ffffff;
+    background-color: #f79a21;
+}
+
+.at-btn-all {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 18px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family:'source_sans_pro', Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: none;
+    border-radius: 10px;
+    background-color: #0e96d0;
+    transition: all 0.3s ease-in-out 0s;
+}
+.at-btn-all:hover,
+.at-btn-all:focus {
+    color: #ffffff;
+    background-color: #f79a21;
+}
+
+
+/* ---- Navigation ---- */
 .navbar-default .navbar-nav > li > a {
     color: #384f9d;
-    font-family: source_sans_pro;
+    font-family:'source_sans_pro', Arial, sans-serif;
     font-weight: normal;
 }
-/*.navbar .navbar-nav > .open > a,*/
-/*.navbar .navbar-nav > .open > a:hover,*/
-/*.navbar .navbar-nav > .open > a:focus,*/
-/*.navbar .navbar-nav > li > a:hover,*/
-/*.navbar .navbar-nav > li > a:focus,*/
-/*.navbar-default .navbar-nav > .active > a,*/
-/*.navbar-default .navbar-nav > .active > a:hover,*/
-/*.navbar-default .navbar-nav > .active > a:focus {*/
-    /*color: #f79a21;*/
-    /*background-color: transparent;*/
-/*}*/
+
+/* ---- Home ---- */
 .carou-direction-nav a {
     opacity: 1;
     background-color: transparent;
@@ -27,7 +68,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
-    font-family: source_sans_pro;
+    font-family:'source_sans_pro', Arial, sans-serif;
 }
 .thsc-picture {
     margin-right: 50px;
@@ -52,7 +93,7 @@
 }
 
 .section-heading-title h2 {
-    font-family: source_sans_pro;
+    font-family:'source_sans_pro', Arial, sans-serif;
     font-size: 30px;
     color: #0e96d0;
     text-transform: uppercase;
@@ -90,7 +131,7 @@
     margin-bottom: 0;
     font-size: 18px;
     text-transform: uppercase;
-    font-family: source_sans_pro;
+    font-family:'source_sans_pro', Arial, sans-serif;
     font-weight: bold;
 }
 .inb-infos h3 a {
@@ -103,7 +144,7 @@
 }
 .inb-infos p {
     font-size: 12px;
-    font-family: source_sans_pro;
+    font-family:'source_sans_pro', Arial, sans-serif;
     font-weight: bold;
 }
 .inb-i-price {
@@ -119,49 +160,67 @@
     text-align: center;
 }
 
-/* ------- Boutons ------- */
-.at-btn-more {
-    display: inline-block;
+/* - infos utiles */
+.home-section-usefull-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.hsui-picture,
+.hsui-menu {
+    flex: 1;
+}
+.hsui-picture {
+    display: flex;
+    justify-content: center;
+}
+.hsui-menu {
+    display: flex;
+    align-self: stretch;
+}
+.hsui-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
     margin: 0;
-    padding: 8px 18px;
-    line-height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 16px;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-family: source_sans_pro;
+    padding: 0;
+    list-style-type: none;
+}
+.hsui-menu li {
+    padding: 0;
+}
+
+.hsui-menu li a {
+    position: relative;
+    display: block;
+    padding: 6px 0 6px 15px;
+    color: #443533;
+    font-size: 25px;
+    line-height: 1.5;
+    font-family: 'source_sans_pro', Arial, sans-serif;
+    background-color: #ebebeb;
+    transition: all 0.3s ease-in-out 0s;
+}
+.hsui-menu li a:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    height: 100%;
+    width: 45px;
+    content: '+';
+    font-family: 'source_sans_pro', arial, sans-serif;
+    font-size: 35px;
+    line-height: 1.5;
     font-weight: bold;
-    box-shadow: none;
-    border-radius: 0;
+    color: #ffffff;
+    text-align: center;
     background-color: #ffc774;
     transition: all 0.3s ease-in-out 0s;
 }
-.at-btn-more:hover,
-.at-btn-more:focus {
-    color: #ffffff;
+.hsui-menu li a:hover:after {
     background-color: #f79a21;
 }
 
-.at-btn-all {
-    display: inline-block;
-    margin: 0;
-    padding: 8px 18px;
-    line-height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 16px;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-family: source_sans_pro;
-    font-weight: bold;
-    box-shadow: none;
-    border-radius: 10px;
-    background-color: #0e96d0;
-    transition: all 0.3s ease-in-out 0s;
-}
-.at-btn-all:hover,
-.at-btn-all:focus {
-    color: #ffffff;
-    background-color: #f79a21;
-}

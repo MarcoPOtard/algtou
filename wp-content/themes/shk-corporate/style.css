@@ -1,14 +1,11 @@
 /*
 Theme Name: Algérie Tours V2
- Description:  A Business theme which is ideal for creating a corporate or any other type of business website. SHK Corporate theme is a child theme of the Appointment WordPress theme. The theme uses the blue color variation that WordPress uses as default. You will find 3 separate header sidebars, which will be placed just above the menu section. The top header section is very useful when it comes to adding social media links, email IDs, contact information and any other important information that you want to share. All you need to do is add a few widgets and you are good to go.
- Author:       webriti
- Author URI:   https://www.webriti.com
- Theme URI:    https://webriti.com/shk-corporate-child-version-details-page/
+ Description:  thème pour la v2 du site Algérie Tours. Basé sur SHK corporate
+ Author:       Madamcom
+ Author URI:   http://www.madamcom.fr/
  Template:     appointment
- Version:      2.1.4
- Tags: 		   full-width-template, threaded-comments, two-columns,  right-sidebar, sticky-post, custom-menu, translation-ready, blog, portfolio, footer-widgets, featured-images, featured-image-header, custom-header
- Text Domain: shk-corporate
-*/
+ Version:      45.0.0
+ */
 
 /*Header Widget and Top contact detail Section--------------------------------------------------------------------------*/
 .top-header-widget h3, 
