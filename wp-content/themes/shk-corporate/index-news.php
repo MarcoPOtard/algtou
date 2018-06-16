@@ -81,7 +81,7 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
                       wp_reset_postdata();
                 }
 			endwhile;
-            $sejours_ID = get_category_by_slug( 'sejours' )->cat_ID;
+            $sejours_ID = get_category_by_slug( 'destinations' )->cat_ID;
             $sejours_link = get_category_link( $sejours_ID )
             ?>
 

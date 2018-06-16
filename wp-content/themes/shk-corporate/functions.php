@@ -9,10 +9,13 @@ function shk_corporate_theme_css() {
 	wp_enqueue_style( 'media-responsive' ,get_template_directory_uri() . '/css/media-responsive.css');
 	wp_dequeue_style( 'appointment-default',get_template_directory_uri() .'/css/default.css');
     wp_enqueue_style( 'algerie-tours-css', get_stylesheet_directory_uri()."/css/algerie-tours.css" );
+    wp_enqueue_script( 'algerie-tours', get_stylesheet_directory_uri() . '/js/algerie-tours.js', array('jquery'));
 }
 
 require( get_stylesheet_directory() . '/header-widget.php' );
 require( get_stylesheet_directory() . '/customizer/customizer-pro.php' );
+require( get_stylesheet_directory() . '/functions/breadcrumbs/breadcrumbs.php');
+
 
 
 add_action( 'customize_register','shk_corporate_remove_custom', 1000 );
@@ -126,7 +129,7 @@ function register_menus_algerie_tours() {
     register_nav_menus(
         array(
             'home-info-usefull' => __( 'Home Usefull Informations' ),
-//            'footer-menu' => __( 'Menu Footer' ),
+            'footer-menu' => __( 'Menu Footer' ),
         )
     );
 }
