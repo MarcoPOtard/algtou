@@ -1,14 +1,18 @@
 <!-- section texte page accueil -->
 <?php 
 
-$id_accueil = 41;
+$id_accueil = get_option('page_on_front');
 $post_accueil = get_post($id_accueil);
 $post_accueil_title = $post_accueil -> post_title;
-if( strtolower($post_accueil_title) == 'accueil') {
+if( is_front_page() ) {
     $post_accueil_content = $post_accueil -> post_content;
+
+//var_dump(is_front_page());
+//var_dump(pll_current_language());
+//var_dump(get_option('page_on_front'));
     ?>
 
-    <div class="text-home-section">
+    <div id="dmc-algerie-tours" class="text-home-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

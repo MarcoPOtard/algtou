@@ -1,4 +1,14 @@
 <?php
+$id_accueil = get_option('page_on_front');
+$post_accueil = get_post($id_accueil);
+$post_accueil_title = $post_accueil -> post_title;
+
+$our_program_title = get_post_meta( $id_accueil, 'home_programmes_personnalisés_titre', true );
+$our_program_category = get_post_meta( $id_accueil, 'home_programmes_personnalisés_categorie', true );
+
+$id_category = get_cat_ID( $our_program_category );
+
+
 $appointment_options=theme_setup_data();
 $news_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
 if($news_setting['home_blog_enabled'] == 0 ) { ?>
@@ -9,8 +19,7 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-heading-title">
-					<h2><?php echo $news_setting['blog_heading']; ?></h2>
-					<p><?php echo $news_setting['blog_description']; ?></p>
+					<h2><?php echo $our_program_title; ?></h2>
 				</div>
 			</div>
 		</div>
@@ -19,11 +28,7 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
 		<div class="index-news-block-container">
             <?php
 
-            $cat_id = array();
-            $cat_id = $news_setting['blog_selected_category_id'];
-            $no_of_post = $news_setting['post_display_count'];
-
-            $args = array( 'post_type' => 'post','ignore_sticky_posts' => 1 , 'category__in' => $cat_id, 'posts_per_page' => $no_of_post);
+            $args = array( 'post_type' => 'post','ignore_sticky_posts' => 1 , 'cat' => $id_category, 'posts_per_page' => 3);
             $news_query = new WP_Query($args);
 
             $i=1;
@@ -33,9 +38,8 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
                         <div class="index-news-block">
 
                             <div class="inb-picture">
-                                <?php $defalt_arg =array('class' => "img-responsive"); ?>
                                 <?php if(has_post_thumbnail()): ?>
-                                <?php the_post_thumbnail('', $defalt_arg); ?>
+                                <?php appointment_post_thumbnail('','img-responsive'); ?>
                                 <?php endif; ?>
                             </div>
                             <div class="inb-infos">

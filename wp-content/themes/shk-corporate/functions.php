@@ -25,7 +25,7 @@ function shk_corporate_remove_custom($wp_customize) {
 
 
 function shk_corporate_theme_setup(){
-	load_theme_textdomain('shk-corporate', get_stylesheet_directory() . '/languages' );
+    load_theme_textdomain('shk-corporate', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'shk_corporate_theme_setup');	
 
@@ -41,9 +41,19 @@ add_action( 'widgets_init', 'shk_corporate_widgets_init');
 function shk_corporate_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __('Sidebar widget area', 'shk-corporate' ),
+		'name' => __('Sidebar widget area category', 'shk-corporate' ),
 		'id' => 'sidebar-primary',
-		'description' => __( 'Sidebar widget area', 'shk-corporate' ),
+		'description' => __( 'Sidebar widget area category', 'shk-corporate' ),
+		'before_widget' => '<div class="sidebar-widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="sidebar-widget-title"><h3>',
+		'after_title' => '</h3></div>',
+	) );
+
+	register_sidebar( array(
+		'name' => __('Sidebar widget area travel', 'shk-corporate' ),
+		'id' => 'sidebar-travel',
+		'description' => __( 'Sidebar widget area travel', 'shk-corporate' ),
 		'before_widget' => '<div class="sidebar-widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="sidebar-widget-title"><h3>',
@@ -51,7 +61,7 @@ function shk_corporate_widgets_init() {
 	) );
 
 //Header sidebar
-	register_sidebar( array(
+/*	register_sidebar( array(
 		'name' => __( 'Top header left area', 'shk-corporate' ),
 		'id' => 'home-header-sidebar_left',
 		'description' => __('Top header left area', 'shk-corporate' ),
@@ -79,7 +89,7 @@ function shk_corporate_widgets_init() {
 		'after_widget' => '',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
-	) );	
+	) );	*/
 }
 
 function shk_corporate_import_files() {
@@ -134,4 +144,50 @@ function register_menus_algerie_tours() {
     );
 }
 add_action( 'init', 'register_menus_algerie_tours' );
+
+
+function button_algerie_tours($params, $content) {
+    extract(
+        shortcode_atts(
+            array(
+                'type' => 'contour',
+                'couleur' => 'orange',
+                'picto' => 'download'
+            ),
+            $params
+        )
+    );
+    if ( has_shortcode( $content, 'popup_trigger' ) ) {
+        $contentNew = do_shortcode( $content );
+    } else {
+        $contentNew = $content;
+    }
+    return '<div class="at-btn ' . $couleur . ' ' . $type . ' ' . $picto . '">' . $contentNew . '</div>';
+}
+add_shortcode('bouton_algerie_tours', 'button_algerie_tours');
+
+function button_algerie_tours_share_friend($params) {
+    extract(
+        shortcode_atts(
+            array(
+                'type' => 'contour',
+                'couleur' => 'orange',
+                'picto' => 'download'
+            ),
+            $params
+        )
+    );
+
+    $text = __('Partagez à un ami', 'shk-corporate');
+    $subject = get_the_title();
+    $body = __('J\'ai trouvé ce voyage très intéressant et j\'ai pensé à le partager avec vous. ', 'shk-corporate') . get_the_permalink() ;
+
+    $theButton = '<div class="at-btn ' . $couleur . ' ' . $type . ' ' . $picto . '">';
+    $theButton .= '<a href="mailto:?subject=' . $subject . '&body=' . $body . '"">' . $text . '</a>';
+    $theButton .= '</div>';
+    return $theButton;
+}
+add_shortcode('button_algerie_tours_share_friend', 'button_algerie_tours_share_friend');
+
+
 ?>

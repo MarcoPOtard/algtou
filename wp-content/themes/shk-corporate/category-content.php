@@ -2,9 +2,9 @@
         <div class="index-news-block">
 
             <div class="inb-picture">
-                <?php $defalt_arg =array('class' => "img-responsive"); ?>
                 <?php if(has_post_thumbnail()): ?>
-                    <?php the_post_thumbnail('', $defalt_arg); ?>
+                    <?php appointment_post_thumbnail('','img-responsive'); ?>
+
                 <?php endif; ?>
             </div>
             <div class="inb-infos">

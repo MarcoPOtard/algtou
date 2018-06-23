@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/variables-icon.css",
+	"sources": [
+		"../sass/variables-icon.scss"
+	],
+	"sourcesContent": [
+		"$icomoon-font-path: \"../fonts\" !default;\n\n$icon-phone: \"\\e904\";\n$icon-mail: \"\\e903\";\n$icon-love: \"\\e900\";\n$icon-checkmark: \"\\e901\";\n$icon-download: \"\\e902\";\n\n"
+	],
+	"mappings": "",
+	"names": []
+}

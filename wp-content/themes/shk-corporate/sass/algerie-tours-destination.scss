@@ -1,0 +1,307 @@
+@import "variables";
+@import "style-icon";
+
+
+.page-destination {
+  .gallery.gallery-columns-1 {
+    margin: 100px 0 0 20px !important;
+    float: right;
+    dl.gallery-item {
+      margin: 0;
+    }
+    .gallery-icon img {
+      max-width: 100%;
+      border: 0 !important;
+      box-shadow: none;
+    }
+  }
+}
+.wpcr3_in_content {
+  margin-top: 50px;
+  border-top: 1px solid $color08;
+}
+
+/* - formulaires - */
+#cf7md-form .mdc-button--primary.mdc-button--raised {
+  background-color: $color03;
+}
+#cf7md-form .mdc-textfield--focused .mdc-textfield__label {
+  color: $color03;
+}
+#cf7md-form .mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
+  /* @alternate */
+  background-color: $color03;
+}
+#cf7md-form .mdc-textfield--theme-dark.mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after,
+#cf7md-form.mdc-theme--dark .mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
+  /* @alternate */
+  background-color: $color03;
+}
+#cf7md-form .mdc-textfield--multiline .mdc-textfield__input:focus,
+#cf7md-form .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:focus,
+#cf7md-form .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background,
+#cf7md-form .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background,
+#cf7md-form .mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle {
+  border-color: $color03;
+}
+
+/* - sidebar - */
+.sidebar-1-programme {
+  h2 {
+    margin-bottom: 5px;
+  }
+  h4 {
+    margin-bottom: 5px;
+    font-size: 20px;
+
+  }
+}
+.elementor-widget.s1p-infos-principales {
+  margin-bottom: 50px;
+}
+
+.s1p-visa {
+  &,
+  p {
+    font-size: 12px;
+  }
+  h2 {
+    padding-bottom: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color02;
+  }
+}
+
+
+.destination-spec-demandes {
+  p, ul, ol {
+    color: $white;
+  }
+  p > a {
+    padding: 0 15px 0 0;
+    color: $white;
+    transition: all 0.3s ease-in-out 0s;
+    i {
+      padding-right: 5px;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color01;
+    }
+  }
+}
+
+// réseaux sociaux
+.footer-contact-social li {
+  color: $color07;
+}
+
+/* --- Boutons spécifiques shortcode --- */
+.at-btn {
+  margin: 10px 0;
+  a {
+    display: block;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out 0s;
+    &:before {
+      @extend %icon-add;
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+  &.download a:before {
+    content: $icon-download;
+    padding: 0 10% 0 20%;
+
+    .sidebar-1-programme & {
+      padding: 0 20px 0 30px;
+    }
+  }
+  &.mail a:before {
+    content: $icon-mail;
+    padding: 0 10% 0 20%;
+    .sidebar-1-programme & {
+      padding: 0 20px 0 30px;
+    }
+  }
+  &.love a:before {
+    content: $icon-love;
+    padding: 0 10% 0 20%;
+    .sidebar-1-programme & {
+      padding: 0 20px 0 30px;
+    }
+  }
+  &.checkmark a:before {
+    content: $icon-checkmark;
+    padding: 0 10% 0 20%;
+    .sidebar-1-programme & {
+      padding: 0 20px 0 30px;
+    }
+  }
+
+  &.contour {
+    a {
+      border-width: 1px;
+      border-style: solid;
+    }
+    &.orange a {
+      color: $color02;
+      border-color: $color02;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $color01;
+        }
+        border-color: $color01;
+      }
+    }
+    &.bleu a {
+      color: $color03;
+      border-color: $color03;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $color02;
+        }
+        border-color: $color02;
+      }
+    }
+    &.gris a {
+      color: $color06;
+      border-color: $color08;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $color02;
+        }
+        border-color: $color02;
+      }
+    }
+    &.noir a {
+      color: $black;
+      border-color: $black;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $color02;
+        }
+        border-color: $color02;
+      }
+    }
+  }
+  &.vide {
+    a {
+      border-width: 1px 0;
+      border-style: solid;
+      border-color: $color08;
+    }
+    &.orange a {
+      color: $color02;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color01;
+        &:before {
+          color: $color01;
+        }
+      }
+    }
+    &.bleu a {
+      color: $color03;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color02;
+        &:before {
+          color: $color02;
+        }
+      }
+    }
+    &.gris a {
+      color: $color06;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color02;
+        &:before {
+          color: $color02;
+        }
+      }
+    }
+    &.noir a {
+      color: $black;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color02;
+        &:before {
+          color: $color02;
+        }
+      }
+    }
+  }
+  &.plein {
+    //a {
+    //  border-width: 1px;
+    //  border-style: solid;
+    //}
+    &.orange a {
+      color: $white;
+      background-color: $color02;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          //color: $color01;
+        }
+        background-color: $color01;
+      }
+    }
+    &.bleu a {
+      color: $white;
+      background-color: $color03;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          //color: $color02;
+        }
+        background-color: $color02;
+      }
+    }
+    &.gris a {
+      color: $color06;
+      background-color: $color08;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          //color: $color02;
+        }
+        color: $white;
+        background-color: $color02;
+      }
+    }
+    &.noir a {
+      color: white;
+      background-color: $black;
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          //color: $color02;
+        }
+        background-color: $color02;
+      }
+    }
+  }
+
+
+
+
+}

@@ -1,7 +1,11 @@
 @import "variables";
 @import "fonts";
+@import "style-icon";
 
 /* ---- Commun ---- */
+body {
+  @extend .font-source-sans-regular;
+}
 /* - Boutons */
 .at-btn-more {
   display: inline-block;
@@ -49,9 +53,31 @@
 
 /* - Navigation - */
 .navbar-default .navbar-nav > li > a {
-  color: #384f9d;
+  color: $color09;
   @extend .font-source-sans-regular;
 }
+#menu-menu-principal,
+#menu-main-menu {
+  .inactive {
+    &.active a {
+      color: $color09;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $color02;
+      }
+    }
+  }
+}
+
+
+.dropdown-menu > li > a {
+  color: $color09;
+}
+.pll-parent-menu-item {
+  border-left: 1px solid #ddd;
+}
+
 
 /* - Breadcrumb -*/
 .page-breadcrumb {
@@ -66,13 +92,59 @@
   text-align: center;
 }
 
+/* - cookie - */
+.cookie-notice-container {
+  a {
+    color: $color02;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color01;
+    }
+  }
+}
+
+ul {
+  font-size: 15px;
+}
+
+/* - Avis - */
+.part-testimonials {
+  margin: 70px 0;
+}
+div.wpcr3_review {
+  @extend .font-source-sans-regular;
+  div.wpcr3_review_title {
+    font-size: 16px;
+    display: block !important;
+  }
+}
+
+/* - sidebar right - */
+.sidebar-section-right {
+  margin: 0 20px 30px 20px;
+  padding: 0;
+  background-color: $white;
+  border: 0;
+  border-top: 2px solid $color05;
+}
+.sidebar-widget {
+  margin-bottom: 0;
+  padding: 30px 0;
+  border-bottom: 2px solid $color05;
+}
+
+/* - Liste - */
+ul li {
+  padding: 3px 0;
+}
+
 
 /* ---- Home ---- */
 .carou-direction-nav a {
   opacity: 1;
   background-color: transparent;
 }
-
 
 .text-home-section-content {
   /*display: flex;*/
@@ -96,6 +168,7 @@
   }
   h1 {
     margin-top: 25px;
+    text-transform: uppercase;
   }
   p {
     font-weight: 300;
@@ -253,7 +326,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 90%;
+    max-width: 100px;
     max-height: 100px;
   }
 }
@@ -388,3 +461,7 @@
 @media (min-width: 1200px) {
 }
 
+
+
+
+@import "algerie-tours-destination";

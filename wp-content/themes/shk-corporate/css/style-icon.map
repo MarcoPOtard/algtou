@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../sass/style-icon.css",
+	"sources": [
+		"../sass/style-icon.scss",
+		"../sass/variables-icon.scss"
+	],
+	"sourcesContent": [
+		"@import \"variables-icon\";\n\n\n@font-face {\n  font-family: 'icomoon';\n  src:\n    url('#{$icomoon-font-path}/icomoon.ttf?xd4fvr') format('truetype'),\n    url('#{$icomoon-font-path}/icomoon.woff?xd4fvr') format('woff'),\n    url('#{$icomoon-font-path}/icomoon.svg?xd4fvr#icomoon') format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n\n[class^=\"icon-\"],\n[class*=\" icon-\"],\n%icon-add {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: 'icomoon' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-phone {\n  &:before {\n    content: $icon-phone;\n  }\n}\n.icon-mail {\n  &:before {\n    content: $icon-mail;\n  }\n}\n.icon-love {\n  &:before {\n    content: $icon-love;\n  }\n}\n.icon-checkmark {\n  &:before {\n    content: $icon-checkmark;\n  }\n}\n.icon-download {\n  &:before {\n    content: $icon-download;\n  }\n}\n\n",
+		"$icomoon-font-path: \"../fonts\" !default;\n\n$icon-phone: \"\\e904\";\n$icon-mail: \"\\e903\";\n$icon-love: \"\\e900\";\n$icon-checkmark: \"\\e901\";\n$icon-download: \"\\e902\";\n\n"
+	],
+	"mappings": ";AAGA,UAAU;EACR,WAAW,EAAE,SAAU;EACvB,GAAG,EACD,kCAAG,CAA6C,kBAAM,EACtD,mCAAG,CAA8C,cAAM,EACvD,0CAAG,CAAqD,aAAM;EAChE,WAAW,EAAE,MAAO;EACpB,UAAU,EAAE,MAAO;;;;CAGrB,AAAA,AAAe,KAAd,EAAO,OAAO,AAAd;CACD,AAAA,AAAgB,KAAf,EAAO,QAAQ,AAAf,EACS;EACR,gFAAgF;EAChF,WAAW,EAAE,oBAAqB;EAClC,KAAK,EAAE,IAAK;EACZ,UAAU,EAAE,MAAO;EACnB,WAAW,EAAE,MAAO;EACpB,YAAY,EAAE,MAAO;EACrB,cAAc,EAAE,IAAK;EACrB,WAAW,EAAE,CAAE;EAEf,uCAAuC;EACvC,sBAAsB,EAAE,WAAY;EACpC,uBAAuB,EAAE,SAAU;CACpC;;;AAED,AAAA,WAAW,AACR,OAAO,CAAC;EACP,OAAO,EC9BE,KAAO;CD+BjB;;;AAEH,AAAA,UAAU,AACP,OAAO,CAAC;EACP,OAAO,EClCC,KAAO;CDmChB;;;AAEH,AAAA,UAAU,AACP,OAAO,CAAC;EACP,OAAO,ECtCC,KAAO;CDuChB;;;AAEH,AAAA,eAAe,AACZ,OAAO,CAAC;EACP,OAAO,EC1CM,KAAO;CD2CrB;;;AAEH,AAAA,cAAc,AACX,OAAO,CAAC;EACP,OAAO,EC9CK,KAAO;CD+CpB",
+	"names": []
+}

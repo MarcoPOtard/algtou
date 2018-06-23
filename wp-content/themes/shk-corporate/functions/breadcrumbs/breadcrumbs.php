@@ -47,10 +47,22 @@ function qtt_custom_breadcrumbs() {
         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
         if ($showCurrent == 1) echo ' ' . $delimiter . '&nbsp > &nbsp' . $before . get_the_title() . $after;
       } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . '&nbsp > &nbsp');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        echo $cats;
+
+        $allCat = get_the_category();
+        $cat = $allCat[0];
+        $displayCat = false;
+        if($allCat[1]) {
+            $cat2 = $allCat[1];
+            if($cat2->parent == $cat->term_id) {
+                echo $cats2 = get_category_parents($cat2, TRUE, ' ' . $delimiter . '&nbsp > &nbsp');
+                $displayCat = true;
+            }
+        }
+        if($displayCat != true) {
+            $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . '&nbsp > &nbsp');
+            if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+            echo $cats;
+        }
         if ($showCurrent == 1) echo $before . get_the_title() . $after;
       }
  

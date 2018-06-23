@@ -11,7 +11,7 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading-title">
-                        <h2>Nos partenaires</h2>
+                        <h2><?php _e('Our partners', 'shk-corporate'); ?></h2>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,12 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
                 <div id="carousel-partners" class="carousel slide <?php echo $slider_setting['slider_options']; ?> multi-item-carousel"data-ride="carousel" data-interval="2000" >
                     <!-- Indicators -->
                     <?php
-                        $query_args = array( 'cat' => 7);
+                    if (pll_current_language() == 'fr') {
+                        $theCat = 40;
+                    } else {
+                        $theCat = 7;
+                    }
+                        $query_args = array( 'cat' => $theCat);
                         $t=true;
 
                         $the_query = new WP_Query($query_args);

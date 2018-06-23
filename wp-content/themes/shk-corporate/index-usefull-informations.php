@@ -1,5 +1,5 @@
 <?php
-$id_accueil = 41;
+$id_accueil = get_option('page_on_front');
 $post_accueil = get_post($id_accueil);
 $post_accueil_title = $post_accueil -> post_title;
 
@@ -7,7 +7,7 @@ $usefull_info_title = get_post_meta( $id_accueil, 'home_informations_utiles_titr
 $usefull_info_picture = get_post_meta( $id_accueil, 'home_informations_utiles_image', true );
 ?>
 
-<div class="blog-section">
+<div class="blog-section" id="informations-utiles">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

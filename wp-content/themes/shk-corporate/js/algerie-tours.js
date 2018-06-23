@@ -16,14 +16,16 @@ jQuery(function($) {
         }
     });
 
-    var dropdown = document.getElementById("cat");
-    function onCatChange() {
-        if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-            location.href = "/?cat="+dropdown.options[dropdown.selectedIndex].value;
-        } else {
-            location.href = "/?cat=5";
+    if($('#dropdown-cat').length > 0) {
+        var dropdown = document.getElementById("dropdown-cat");
+        function onCatChange() {
+            if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+                location.href = "/?cat="+dropdown.options[dropdown.selectedIndex].value;
+            } else {
+                location.href = "/?cat=5";
+            }
         }
+        dropdown.onchange = onCatChange;
     }
-    dropdown.onchange = onCatChange;
 
 });
