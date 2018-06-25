@@ -17,13 +17,18 @@ jQuery(function($) {
     });
 
     if($('#dropdown-cat').length > 0) {
-        var dropdown = document.getElementById("dropdown-cat");
+        var dropdown = document.getElementById("dropdown-cat"),
+            idCat,
+            idCatParent = dropdown.getAttribute('class').replace('js-', '');
+        console.log(idCatParent);
+
         function onCatChange() {
             if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
-                location.href = "/?cat="+dropdown.options[dropdown.selectedIndex].value;
+                idCat = dropdown.options[dropdown.selectedIndex].value
             } else {
-                location.href = "/?cat=5";
+                idCat = idCatParent;
             }
+            location.href = "/?cat=" + idCat;
         }
         dropdown.onchange = onCatChange;
     }

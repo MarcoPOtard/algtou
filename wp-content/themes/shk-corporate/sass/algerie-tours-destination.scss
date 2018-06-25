@@ -93,6 +93,12 @@
   }
 }
 
+.elementor-widget-wrap {
+  .elementor-element.destination-spec-demandes > .elementor-widget-container {
+    background-color: #439aff;
+  }
+}
+
 // réseaux sociaux
 .footer-contact-social li {
   color: $color07;

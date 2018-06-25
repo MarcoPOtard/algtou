@@ -1,5 +1,7 @@
 <?php
-  get_header();
+    get_header();
+    $categories = get_the_category();
+    $category_id = $categories[0]->cat_ID;
   ?>
 <!-- Page Title Section -->
 <div class="page-title-section">		
@@ -43,10 +45,11 @@
                         <div class="sidebar-widget-title"><h3><?php _e('Sort by categories','shk-corporate'); ?></h3></div>
                         <?php
                         $args = array(
-                                'include'           => 'destinations',
-                                'show_option_all'   => get_the_category_by_ID(  5 ),
-                                'child_of'          => 5,
-                                'id'                => 'dropdown-cat'
+//                                'include'           => $test,
+                                'show_option_all'   => get_the_category_by_ID( $category_id ),
+                                'child_of'          => $category_id,
+                                'id'                => 'dropdown-cat',
+                                'class'             => 'js-' . $category_id
                         );
                         wp_dropdown_categories( $args );
                         ?>

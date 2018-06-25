@@ -178,7 +178,7 @@ function button_algerie_tours_share_friend($params) {
         )
     );
 
-    $text = __('Partagez à un ami', 'shk-corporate');
+    $text = __('Share to a friend', 'shk-corporate');
     $subject = get_the_title();
     $body = __('J\'ai trouvé ce voyage très intéressant et j\'ai pensé à le partager avec vous. ', 'shk-corporate') . get_the_permalink() ;
 
