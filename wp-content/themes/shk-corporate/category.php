@@ -1,7 +1,11 @@
 <?php
     get_header();
     $categories = get_the_category();
-    $category_id = $categories[0]->cat_ID;
+    if($categories[0]->parent != 0) {
+        $category_id = $categories[0]->parent;
+    } else {
+        $category_id = $categories[0]->cat_ID;
+    }
   ?>
 <!-- Page Title Section -->
 <div class="page-title-section">		

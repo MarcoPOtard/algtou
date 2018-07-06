@@ -1,17 +1,34 @@
 <?php
 $id_accueil = get_option('page_on_front');
-$post_accueil = get_post($id_accueil);
-$post_accueil_title = $post_accueil -> post_title;
+//$post_accueil = get_post($id_accueil);
+//$post_accueil_title = $post_accueil -> post_title;
 
 $our_program_title = get_post_meta( $id_accueil, 'home_programmes_personnalisés_titre', true );
 $our_program_category = get_post_meta( $id_accueil, 'home_programmes_personnalisés_categorie', true );
 
 $id_category = get_cat_ID( $our_program_category );
 
+//$cat_children = get_term_children( $id_category, 'category' );
+//var_dump($cat_children);
 
-$appointment_options=theme_setup_data();
-$news_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
-if($news_setting['home_blog_enabled'] == 0 ) { ?>
+?>
+<!--<div class="blog-section">-->
+<!--    <div class="container">-->
+<!--        <div class="index-news-block-categories">-->
+<!--            --><?php
+//                foreach ($cat_children as $id_one_cat) {
+//                    echo $id_one_cat;
+//                }
+//
+//            ?>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!---->
+
+
+
+
 <div class="blog-section section-background">
 	<div class="container">
 	
@@ -43,12 +60,7 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
                                 <?php endif; ?>
                             </div>
                             <div class="inb-infos">
-                                <?php $appointment_options=theme_setup_data();
-                                  $news_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
-                                if($news_setting['home_meta_section_settings'] == '' ) { ?>
-
                                     <?php
-                                }
                                 $inb_price = get_post_meta( get_the_ID(), 'sejour_prix', true );
                                 $inb_infos_comp = get_post_meta( get_the_ID(), 'sejour_info_complementaire', true );
                                 $inb_date = get_post_meta( get_the_ID(), 'sejour_date_duree', true );
@@ -85,8 +97,8 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
                       wp_reset_postdata();
                 }
 			endwhile;
-            $sejours_ID = get_category_by_slug( 'destinations' )->cat_ID;
-            $sejours_link = get_category_link( $sejours_ID )
+
+            $sejours_link = get_category_link( $id_category )
             ?>
 
 	    </div>
@@ -94,5 +106,4 @@ if($news_setting['home_blog_enabled'] == 0 ) { ?>
             <a href="<?php echo $sejours_link; ?>" class="at-btn-all"><?php _e("See all our programs","shk-corporate");?></a>
         </div>
 	</div>
-<?php } ?>
 </div>

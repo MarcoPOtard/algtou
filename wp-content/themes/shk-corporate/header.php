@@ -121,18 +121,24 @@
 					$social .='</ul>'; 
 					
 			}
-			$social .='</ul>'; 
+			$social .='</ul>';
+
+        if( is_front_page() ) {
+            $classNav = ' home-navbar';
+        } else {
+            $classNav = ' header-navbar';
+        }
 		
 		?>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse <?php echo $classNav; ?>" id="bs-example-navbar-collapse-1">
 				<?php wp_nav_menu( array(  
 				'theme_location' => 'primary',
 				'container'  => '',
-				'menu_class' => 'nav navbar-nav navbar-right',
+				'menu_class' => 'nav navbar-nav',
 				'fallback_cb' => 'webriti_fallback_page_menu',
-				'items_wrap'  => $social,
+//				'items_wrap'  => $social,
 				'walker' => new webriti_nav_walker()
 				 ) );
 				?>

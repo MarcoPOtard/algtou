@@ -99,10 +99,20 @@
   }
 }
 
+.elementor-widget:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 // réseaux sociaux
 .footer-contact-social li {
-  color: $color07;
+    background-color: $color07;
 }
+
+.gallery-columns-1 {
+  margin: 0;
+  width:  100%;
+}
+
 
 /* --- Boutons spécifiques shortcode --- */
 .at-btn {
@@ -310,4 +320,21 @@
 
 
 
+}
+
+@media screen and (max-width: 767px){
+  #gallery-1 {
+    .gallery-item {
+      width: 33% !important;
+    }
+    br {
+      display: none;
+    }
+  }
+
+  .page-destination {
+    .gallery.gallery-columns-1 {
+      margin: 20px 0 0 20px !important;
+    }
+  }
 }

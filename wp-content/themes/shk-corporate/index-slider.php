@@ -16,12 +16,22 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 			
 			$slider_select_category = array();
 			$slider_select_category = $slider_setting['slider_select_category' ];
-		
-			$query_args = array( 'category__in'  => $slider_select_category,'ignore_sticky_posts' => 1 ,'posts_per_page' =>$featured_slider_post);	
-			
+
+			if (pll_current_language() == 'fr') {
+			    $query_args = array( 'category__in'  => $slider_select_category,'ignore_sticky_posts' => 1 ,'posts_per_page' =>$featured_slider_post);
+            } elseif (pll_current_language() == 'en') {
+			    $catIdInt = (int)$slider_select_category[0];
+                $catIdEn = pll_get_term($catIdInt);
+                $catIdEnString = (string)$catIdEn;
+                $query_args = array( 'category__in'  => $catIdEnString,'ignore_sticky_posts' => 1 ,'posts_per_page' =>$featured_slider_post);
+
+            }
+
+
 			$t=true;
 
-			$the_query = new WP_Query($query_args);	
+			$the_query = new WP_Query($query_args);
+
 		?>
 			<ol class="carousel-indicators">
 				<?php
@@ -47,26 +57,26 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 			}
 			if(!has_post_thumbnail()){
 			 echo '<img class="img-responsive" src="'.WEBRITI_TEMPLATE_DIR_URI.'/images/slide/no-image.jpg">'; ?>
-			 <!--<div class="container slide-caption">
-			 <?php /*if($post->post_title !="") {*/?>
-				<div class="slide-text-bg1"><h2><?php /*the_title();*/?></h2></div>
-				<?php /*}
+			 <div class="container slide-caption">
+			 <?php if($post->post_title !="") {?>
+				<div class="slide-text-bg1"><h2><?php the_title();?></h2></div>
+				<?php }
 				if($post->post_content !="")
 				{
-				echo get_the_excerpt(); 
-				}*/?>
-			</div>-->
+				echo get_the_excerpt();
+				}?>
+			</div>
 			<?php }
 			else { ?>
-			<!--<div class="container slide-caption">
-			 <?php /*if($post->post_title !="") {*/?>
-				<div class="slide-text-bg1"><h2><?php /*the_title();*/?></h2></div>
-				<?php /*}
+			<div class="container slide-caption">
+			 <?php if($post->post_title !="") {?>
+				<div class="slide-text-bg1"><h2><?php the_title();?></h2></div>
+				<?php }
 				if($post->post_content !="")
 				{
-				echo get_the_excerpt(); 
-				}*/?>
-			</div>-->
+				echo the_content();
+				}?>
+			</div>
 			<?php } ?>
 		</div> 
 		<?php } wp_reset_postdata();  }  ?>  

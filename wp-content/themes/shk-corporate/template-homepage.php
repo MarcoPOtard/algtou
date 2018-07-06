@@ -7,8 +7,13 @@ get_header();
 		get_template_part('index', 'slider');
 
 		//****** Texte de la page d'accueil ********
-        get_template_part('index', 'text-home');
-		
+			if( $post->post_content != "" ) {
+			    if( have_posts()) :  the_post();
+			        the_content();
+				endif;
+			}
+//<!--        get_template_part('index', 'text-home');-->
+
 		//****** get index Programme personnalisé  ********
 		get_template_part('index', 'news');
 

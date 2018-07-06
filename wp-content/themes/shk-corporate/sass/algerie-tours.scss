@@ -1,3 +1,4 @@
+/* attention ls fichier algerie-tours.css est généré depuis le fichier algerie-tours.scss -> sass */
 @import "variables";
 @import "fonts";
 @import "style-icon";
@@ -5,6 +6,9 @@
 /* ---- Commun ---- */
 body {
   @extend .font-source-sans-regular;
+  &.home {
+    position: relative;
+  }
 }
 /* - Boutons */
 .at-btn-more {
@@ -52,6 +56,82 @@ body {
 }
 
 /* - Navigation - */
+.home {
+  nav.navbar-default {
+    //position: absolute;
+    width: 100%;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 10;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .navbar-brand {
+      margin-right: 0;
+    }
+    .home-navbar {
+      background-color: $white;
+      .navbar-nav {
+         a {
+          font-weight: bold;
+          color: $color09;
+          //font-size: 20px;
+           &:hover {
+             color: $color02;
+           }
+        }
+      }
+      .dropdown-menu > li > a {
+        background-color: $white;
+        &:hover {
+          color: $white;
+          background-color: #006799;
+        }
+      }
+    }
+  }
+  .slide-caption {
+    //top: 60%;
+  }
+}
+
+
+
+.home-list-category {
+  .elementor-image-box-wrapper {
+    position: relative;
+    .elementor-image-box-title {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%
+    }
+      .elementor-image-box-description {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background-color: $color01;
+        transition: all 0.3s ease-in-out 0s;
+      }
+    &:hover {
+      .elementor-image-box-description {
+        background-color: $color02;
+
+      }
+
+    }
+  }
+}
 .navbar-default .navbar-nav > li > a {
   color: $color09;
   @extend .font-source-sans-regular;
@@ -68,6 +148,9 @@ body {
       }
     }
   }
+}
+.header-navbar .navbar-nav {
+  float: right;
 }
 
 
@@ -358,6 +441,54 @@ ul li {
   }
 }
 
+/*Homepage Carousel Bootstrap Slider Section------------------------------------------------------------------*/
+.carousel-inner {
+  text-align: center;
+}
+.slide-caption {
+  width: 100%;
+
+  p {
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 0px 5px rgba(0, 0, 0, 0.7) ;
+
+    a {
+      text-shadow: none;
+    }
+    .at-btn-all {
+      font-size: 12px;
+    }
+  }
+}
+.slide-text-bg1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+.slide-text-bg1 h2 {
+  background-color: transparent;
+  color: $white;
+  padding: 0;
+  line-height: 40px;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 0 0px 5px rgba(0, 0, 0, 0.7) ;
+  box-shadow: none;
+}
+.slide-text-bg2 {
+  text-align: left;
+  margin: 0 0 20px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  z-index: 773;
+}
+
+
+
+
 /* ----- Footer ---- */
 .footer-copyright-section {
   background-color: $color01;
@@ -409,6 +540,12 @@ ul li {
 }
 
 
+// page contact
+#cf7md-form .cf7md-item {
+  margin-bottom: 0px;
+}
+
+
 /* ----- Responsive ----- */
 
 @media (min-width: 640px) {
@@ -418,6 +555,23 @@ ul li {
 
 }
 @media (min-width: 768px) {
+  .home {
+    nav.navbar-default {
+      //position: absolute;
+    }
+    .home-navbar {
+      .navbar-nav {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .slide-caption p {
+    font-size: 14px;
+  }
+
+
   .text-home-section-content {
     display: flex;
     flex-direction: row;
@@ -451,14 +605,44 @@ ul li {
   .hsui-menu li a {
     margin: 0 ;
   }
-
+  .home-list-category .elementor-image-box-wrapper .elementor-image-box-title {
+    top: 20%;
+  }
 
 
 
 }
 @media (min-width: 992px) {
+  .slide-caption p {
+    font-size: 24px;
+  }
+  .home-list-category .elementor-image-box-wrapper .elementor-image-box-title {
+    top: 40%;
+  }
 }
 @media (min-width: 1200px) {
+  .home {
+    nav.navbar-default {
+      position: absolute;
+    }
+    .slide-caption {
+      top: 70%;
+    }
+  }
+    .home-navbar {
+    .navbar-nav {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+  .slide-caption p {
+    font-size: 30px;
+  }
+  .at-btn-all {
+    font-size: 16px;
+  }
+
 }
 
 

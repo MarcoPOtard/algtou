@@ -50,15 +50,15 @@ function shk_corporate_widgets_init() {
 		'after_title' => '</h3></div>',
 	) );
 
-	register_sidebar( array(
-		'name' => __('Sidebar widget area travel', 'shk-corporate' ),
-		'id' => 'sidebar-travel',
-		'description' => __( 'Sidebar widget area travel', 'shk-corporate' ),
-		'before_widget' => '<div class="sidebar-widget">',
-		'after_widget' => '</div>',
-		'before_title' => '<div class="sidebar-widget-title"><h3>',
-		'after_title' => '</h3></div>',
-	) );
+//	register_sidebar( array(
+//		'name' => __('Sidebar widget area travel', 'shk-corporate' ),
+//		'id' => 'sidebar-travel',
+//		'description' => __( 'Sidebar widget area travel', 'shk-corporate' ),
+//		'before_widget' => '<div class="sidebar-widget">',
+//		'after_widget' => '</div>',
+//		'before_title' => '<div class="sidebar-widget-title"><h3>',
+//		'after_title' => '</h3></div>',
+//	) );
 
 //Header sidebar
 /*	register_sidebar( array(
@@ -152,7 +152,8 @@ function button_algerie_tours($params, $content) {
             array(
                 'type' => 'contour',
                 'couleur' => 'orange',
-                'picto' => 'download'
+                'picto' => 'download',
+                'select' => 0
             ),
             $params
         )
@@ -162,7 +163,10 @@ function button_algerie_tours($params, $content) {
     } else {
         $contentNew = $content;
     }
-    return '<div class="at-btn ' . $couleur . ' ' . $type . ' ' . $picto . '">' . $contentNew . '</div>';
+    if($select > 0) {
+        $dataAction = 'data-select="' . $select . '"';
+    }
+    return '<div class="at-btn ' . $couleur . ' ' . $type . ' ' . $picto . '" ' . $dataAction . ' >' . $contentNew . '</div>';
 }
 add_shortcode('bouton_algerie_tours', 'button_algerie_tours');
 

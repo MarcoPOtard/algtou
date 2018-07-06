@@ -33,4 +33,25 @@ jQuery(function($) {
         dropdown.onchange = onCatChange;
     }
 
+    $('.pum-trigger[class*="popmake"]').click(function(){
+        var elemInSelect = $(this).parent('[data-select]').attr('data-select');
+        if (elemInSelect.length > 0) {
+            var elemToSelect = parseInt(elemInSelect);
+            console.log(elemToSelect);
+            var infoPopup = $(this).attr('class').replace('pum-trigger','').replace(/ /g,"");
+            // console.log(infoPopup);
+            window.setTimeout(modifSelect,1);
+
+            function modifSelect() {
+                $('select', '#'+infoPopup)[0].options[elemToSelect].selected = 'selected';
+
+                var mySelect = $('select option:nth-child('+elemToSelect+')', '#'+infoPopup)[0];
+                console.log(mySelect);
+                // mySelect.attr('selected','selected');
+            }
+
+        }
+
+    });
+
 });

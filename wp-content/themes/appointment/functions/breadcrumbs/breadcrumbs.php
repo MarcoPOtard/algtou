@@ -17,7 +17,7 @@ function qt_custom_breadcrumbs() {
  
   } else {
  
-    echo '<li><a href="' . $homeLink . '">' . $home . '</a> ' . '&nbsp &#47; &nbsp';
+    echo '<li><a href="' . $homeLink . '">' . $home . '</a> ' . '&nbsp > &nbsp';
  
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
