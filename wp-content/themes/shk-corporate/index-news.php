@@ -4,6 +4,7 @@ $id_accueil = get_option('page_on_front');
 //$post_accueil_title = $post_accueil -> post_title;
 
 $our_program_title = get_post_meta( $id_accueil, 'home_programmes_personnalisés_titre', true );
+$our_program_sub_title = get_post_meta( $id_accueil, 'home_programmes_personnalisés_sous_titre', true );
 $our_program_category = get_post_meta( $id_accueil, 'home_programmes_personnalisés_categorie', true );
 
 $id_category = get_cat_ID( $our_program_category );
@@ -36,7 +37,7 @@ $id_category = get_cat_ID( $our_program_category );
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-heading-title">
-					<h2><?php echo $our_program_title; ?></h2>
+					<h2><?php echo $our_program_title; ?><br><span><?php echo $our_program_sub_title; ?></span></h2>
 				</div>
 			</div>
 		</div>
@@ -86,7 +87,7 @@ $id_category = get_cat_ID( $our_program_category );
                                 ?>
 
                                 <div class="inb-button">
-                                    <a href="<?php the_permalink(); ?>" class="at-btn-more"><?php _e("Read +","shk-corporate"); ?></a>
+                                    <a href="<?php the_permalink(); ?>" class="at-btn-more"><?php _e("I benefit","shk-corporate"); ?></a>
                                 </div>
                                 <?php
                                 ?>

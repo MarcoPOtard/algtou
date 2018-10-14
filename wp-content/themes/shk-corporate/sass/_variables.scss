@@ -15,17 +15,23 @@
   font-family:'source_sans_pro', Arial, sans-serif;
   font-weight: 300;
 }
+.font-source-sans-medium {
+  font-family:'source_sans_pro', Arial, sans-serif;
+  font-weight: 600;
+}
 
 
 // --- Couleurs
 $white: #fff;
 $black: #000;
-$color01: #ffc774;
-$color02: #f79a21;
-$color03: #0e96d0;
+$color01: #944c29;
+$color02: #efa900;
+$color03: #00a9bc;
 $color04: #8b8a8a;
 $color05: #ebebeb;
 $color06: #443533;
 $color07: #282828;
 $color08: #e1e1e1;
 $color09: #384f9d;
+$color10: rgba(0,0,0,0.2);
+$color11: #1d1d1d;

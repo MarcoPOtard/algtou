@@ -1,5 +1,5 @@
 <!--<div id="post---><?php //the_ID(); ?><!--" --><?php //post_class('blog-lg-area-left'); ?>
-        <div class="index-news-block">
+        <div class="index-news-block category-page-one-content">
 
             <div class="inb-picture">
                 <?php if(has_post_thumbnail()): ?>

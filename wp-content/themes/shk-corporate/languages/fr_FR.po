@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Shk Corporate\n"
-"POT-Creation-Date: 2018-06-25 23:28+0200\n"
-"PO-Revision-Date: 2018-06-25 23:49+0200\n"
+"POT-Creation-Date: 2018-08-30 22:49+0200\n"
+"PO-Revision-Date: 2018-08-30 22:49+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -21,15 +21,17 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: category-content.php:42 index-news.php:77
+#: category-content.php:42
+#, fuzzy
+#| msgid "Read More"
 msgid "Read +"
-msgstr "En lire +"
+msgstr "Lire plus"
 
-#: category.php:45
+#: category.php:49
 msgid "Sort by categories"
 msgstr "Trier par catégories"
 
-#: category.php:64
+#: category.php:68
 msgid "They testify"
 msgstr "Ils témoignent"
 
@@ -40,10 +42,6 @@ msgstr ""
 #: functions.php:44 functions.php:46
 msgid "Sidebar widget area category"
 msgstr "Sidebar de la catégorie"
-
-#: functions.php:54 functions.php:56
-msgid "Sidebar widget area travel"
-msgstr "Sidebar d'une destination"
 
 #: functions.php:103
 msgid ""
@@ -64,11 +62,11 @@ msgstr "Accueil informations utiles"
 msgid "Menu Footer"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:185
 msgid "Share to a friend"
 msgstr "Partagez à un ami"
 
-#: functions.php:183
+#: functions.php:187
 msgid ""
 "J'ai trouvé ce voyage très intéressant et j'ai pensé à le partager avec "
 "vous. "
@@ -131,7 +129,11 @@ msgstr "Lien"
 msgid "Open link in new tab"
 msgstr "Ouvrir le lien dans un nouvel onglet"
 
-#: index-news.php:94
+#: index-news.php:90
+msgid "I benefit"
+msgstr "J'en profite"
+
+#: index-news.php:107
 msgid "See all our programs"
 msgstr "Voir tous nos programmes"
 
@@ -189,6 +191,10 @@ msgid "http://www.madamcom.fr/"
 msgstr ""
 
 #. Template Name of the plugin/theme
+msgid "page Contact"
+msgstr ""
+
+#. Template Name of the plugin/theme
 msgid "Fullwidth"
 msgstr "Pleine largeur"
 
@@ -197,5 +203,14 @@ msgid "1 programme détaillé"
 msgstr ""
 
 #. Template Name of the plugin/theme
+#, fuzzy
+#| msgid "Home Page Algérie Tours"
+msgid "Home Page Algérie Tours 2"
+msgstr "Page d'accueil Algérie Tours"
+
+#. Template Name of the plugin/theme
 msgid "Home Page Algérie Tours"
 msgstr "Page d'accueil Algérie Tours"
+
+#~ msgid "Sidebar widget area travel"
+#~ msgstr "Sidebar d'une destination"

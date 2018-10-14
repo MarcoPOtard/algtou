@@ -164,7 +164,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_linkedin_link]',
     array(
-        'label' => __('LinkedIn URL','appointment'),
+        'label' => __('Pinterest URL','appointment'),
         'section' => 'copyright_social_icon',
         'type' => 'text',
     )
@@ -236,7 +236,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
    'appointment_options[footer_social_media_skype_link]',
     array(
-        'label' => __('Skype URL','appointment'),
+        'label' => __('Instagram URL','appointment'),
         'section' => 'copyright_social_icon',
         'type' => 'text',
     )

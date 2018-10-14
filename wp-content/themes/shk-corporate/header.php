@@ -63,16 +63,25 @@
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 				<?php if($header_setting['text_title'] == 1) { ?>
-				<h1><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="shk-corporate">
+				<h1><a class="navbar-brand logo-spec-respon" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="shk-corporate">
 				<?php
-					 if($header_setting['enable_header_logo_text'] == 1) 
-					{ echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>"; }
-					elseif($header_setting['upload_image_logo']!='') 
-					{ ?>
-					<img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
-					<?php } else { ?>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shk_corporate.png">
-					<?php } ?>
+					 if($header_setting['enable_header_logo_text'] == 1) {
+					     echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>";
+					 } elseif($header_setting['upload_image_logo']!='') {
+                        if( is_front_page() ) {
+                            ?>
+                            <img class="img-responsive" src="/wp-content/themes/shk-corporate/images/logo-algerie-tours-blanc-long.png"/>
+                            <?php
+                        } else { ?>
+                            <img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>"
+                                 style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
+                            <?php
+                        }
+					 } else {
+					     ?>
+					    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shk_corporate.png">
+					    <?php
+					 } ?>
 				</a></h1>
 				<?php } ?>	
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

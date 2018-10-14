@@ -20,8 +20,6 @@ get_header();
         //****** get index informations utiles  ********
 		get_template_part('index', 'usefull-informations');
 
-        //****** get index partenaires  ********
-		get_template_part('index', 'partners');
 
 		//****** Orange Sidebar Area ********
 //		get_sidebar('orange');

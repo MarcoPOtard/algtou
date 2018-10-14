@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Shk Corporate\n"
 "POT-Creation-Date: 2018-06-25 23:28+0200\n"
-"PO-Revision-Date: 2018-06-25 23:31+0200\n"
+"PO-Revision-Date: 2018-09-11 22:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -199,3 +199,7 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Home Page Algérie Tours"
 msgstr "Page d'accueil Algérie Tours"
+
+#. Template Name of the plugin/theme
+msgid "I benefit"
+msgstr "J'en profite"

@@ -45,6 +45,11 @@
 			<!--Sidebar Area-->
 			<div class="col-md-4">
                 <div class="sidebar-section-right">
+                    <?php
+                    if( is_active_sidebar( 'sidebar-category-top' ) ):
+                        dynamic_sidebar( 'sidebar-category-top' );
+                    endif;
+                    ?>
                     <div class="sidebar-widget">
                         <div class="sidebar-widget-title"><h3><?php _e('Sort by categories','shk-corporate'); ?></h3></div>
                         <?php

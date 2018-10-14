@@ -91,6 +91,8 @@ function theme_setup_data()
 	'footer_googleplus_media_enabled' => 1,
 	'footer_social_media_skype_link' => '#',
 	'footer_skype_media_enabled' => 1,
+	'footer_social_media_instagram_link' => '#',
+	'footer_instagram_media_enabled' => 1,
 	);
   	}
   ?>

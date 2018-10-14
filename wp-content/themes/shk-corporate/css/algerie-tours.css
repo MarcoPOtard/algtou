@@ -7,7 +7,8 @@
 }
 
 /* line 6, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/_variables.scss */
-.font-source-sans-bold, .at-btn-more, .at-btn-all, .inb-infos h3, .inb-infos p, .hsui-menu li a:after {
+.font-source-sans-bold, .at-btn-more,
+.textwidget .at-btn-more, .inb-infos h3, .inb-infos p, .hsui-menu li a:after {
   font-family: 'source_sans_pro', Arial, sans-serif;
   font-weight: bold;
 }
@@ -22,6 +23,12 @@
 .font-source-sans-light {
   font-family: 'source_sans_pro', Arial, sans-serif;
   font-weight: 300;
+}
+
+/* line 18, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/_variables.scss */
+.font-source-sans-medium, .at-btn-all, nav.navbar-default .home-navbar .navbar-nav a, nav.navbar-default .navbar-nav > li > a, .footer-top-menu ul li a, .footer-top-menu-second ul li a {
+  font-family: 'source_sans_pro', Arial, sans-serif;
+  font-weight: 600;
 }
 
 @font-face {
@@ -41,7 +48,7 @@
 }
 
 @font-face {
-  font-family: 'source_sans_probold';
+  font-family: 'source_sans_pro';
   src: url("../fonts/sourcesanspro-bold.eot");
   src: url("../fonts/sourcesanspro-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-bold.woff2") format("woff2"), url("../fonts/sourcesanspro-bold.woff") format("woff"), url("../fonts/sourcesanspro-bold.svg#source_sans_probold") format("svg");
   font-weight: bold;
@@ -49,10 +56,18 @@
 }
 
 @font-face {
-  font-family: 'source_sans_prolight';
+  font-family: 'source_sans_pro';
   src: url("../fonts/sourcesanspro-light.eot");
   src: url("../fonts/sourcesanspro-light.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-light.woff2") format("woff2"), url("../fonts/sourcesanspro-light.woff") format("woff"), url("../fonts/sourcesanspro-light.svg#source_sans_prolight") format("svg");
   font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_pro';
+  src: url("../fonts/sourcesanspro-semibold.eot");
+  src: url("../fonts/sourcesanspro-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-semibold.woff2") format("woff2"), url("../fonts/sourcesanspro-semibold.woff") format("woff"), url("../fonts/sourcesanspro-semibold.svg#source_sans_prosemibold") format("svg");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -113,7 +128,8 @@ body.home {
 
 /* - Boutons */
 /* line 14, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.at-btn-more {
+.at-btn-more,
+.textwidget .at-btn-more {
   display: inline-block;
   margin: 0;
   padding: 8px 18px;
@@ -121,21 +137,48 @@ body.home {
   text-align: center;
   vertical-align: middle;
   font-size: 16px;
-  color: #fff;
+  color: #efa900;
   text-transform: uppercase;
   box-shadow: none;
-  border-radius: 0;
-  background-color: #ffc774;
+  border-radius: 5px;
+  border: 1px solid #efa900;
+  background-color: transparent;
   transition: all 0.3s ease-in-out 0s;
 }
 
-/* line 29, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.at-btn-more:hover, .at-btn-more:focus {
-  color: #fff;
-  background-color: #f79a21;
+/* line 32, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.category-page-one-content .at-btn-more, .category-page-one-content
+.textwidget .at-btn-more {
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 /* line 36, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.at-btn-more:hover, .at-btn-more:focus,
+.textwidget .at-btn-more:hover,
+.textwidget .at-btn-more:focus {
+  color: #fff;
+  border-color: #efa900;
+  background-color: #efa900;
+}
+
+/* line 43, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+p.at-btn-more {
+  padding: 0;
+}
+
+/* line 46, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+p.at-btn-more a {
+  display: inline-block;
+  padding: 8px 18px;
+}
+
+/* line 50, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+p.at-btn-more a:hover, p.at-btn-more a:focus {
+  color: #fff;
+}
+
+/* line 58, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .at-btn-all {
   display: inline-block;
   margin: 0;
@@ -147,20 +190,21 @@ body.home {
   color: #fff;
   text-transform: uppercase;
   box-shadow: none;
-  border-radius: 10px;
-  background-color: #0e96d0;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out 0s;
 }
 
-/* line 51, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 74, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .at-btn-all:hover, .at-btn-all:focus {
   color: #fff;
-  background-color: #f79a21;
+  background-color: #efa900;
 }
 
 /* - Navigation - */
-/* line 60, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default {
+/* line 84, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default {
   width: 100%;
   border: 0;
   text-transform: uppercase;
@@ -168,52 +212,74 @@ body.home {
   z-index: 10;
 }
 
-/* line 68, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .container {
+/* line 92, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* line 74, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .navbar-brand {
+/* line 98, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .navbar-brand {
   margin-right: 0;
 }
 
-/* line 77, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .home-navbar {
+/* line 101, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .navbar-brand.logo-spec-respon {
+  width: 150px;
+  height: 120px;
+  background: url(../images/logo-algerie-tours-header.png) no-repeat center center transparent;
+}
+
+/* line 105, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .navbar-brand.logo-spec-respon img {
+  display: none;
+}
+
+/* line 110, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .home-navbar {
   background-color: #fff;
 }
 
-/* line 80, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .home-navbar .navbar-nav a {
-  font-weight: bold;
-  color: #384f9d;
+/* line 113, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .home-navbar .navbar-nav a {
+  color: #8b8a8a;
 }
 
-/* line 84, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .home-navbar .navbar-nav a:hover {
-  color: #f79a21;
+/* line 117, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .home-navbar .navbar-nav a:hover {
+  color: #efa900;
 }
 
-/* line 89, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .home-navbar .dropdown-menu > li > a {
+/* line 122, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .home-navbar .dropdown-menu > li > a {
   background-color: #fff;
 }
 
-/* line 91, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.home nav.navbar-default .home-navbar .dropdown-menu > li > a:hover {
+/* line 124, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .home-navbar .dropdown-menu > li > a:hover {
   color: #fff;
   background-color: #006799;
 }
 
-/* line 106, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 136, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .navbar-nav > li > a {
+  color: #8b8a8a;
+  text-transform: uppercase;
+}
+
+/* line 140, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+nav.navbar-default .navbar-nav > li > a:hover {
+  color: #efa900;
+}
+
+/* line 151, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-list-category .elementor-image-box-wrapper {
   position: relative;
 }
 
-/* line 108, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 153, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-list-category .elementor-image-box-wrapper .elementor-image-box-title {
   position: absolute;
   top: 40%;
@@ -222,7 +288,7 @@ body.home {
   width: 90%;
 }
 
-/* line 115, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 160, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-list-category .elementor-image-box-wrapper .elementor-image-box-description {
   position: absolute;
   bottom: 0;
@@ -231,94 +297,95 @@ body.home {
   height: 40px;
   text-align: center;
   line-height: 40px;
-  background-color: #ffc774;
+  background-color: #944c29;
   transition: all 0.3s ease-in-out 0s;
 }
 
-/* line 127, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 172, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-list-category .elementor-image-box-wrapper:hover .elementor-image-box-description {
-  background-color: #f79a21;
+  background-color: #efa900;
 }
 
-/* line 135, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 180, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .navbar-default .navbar-nav > li > a {
-  color: #384f9d;
+  color: #8b8a8a;
+  text-transform: uppercase;
 }
 
-/* line 142, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 188, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 #menu-menu-principal .inactive.active a,
 #menu-main-menu .inactive.active a {
-  color: #384f9d;
+  color: #8b8a8a;
 }
 
-/* line 144, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 190, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 #menu-menu-principal .inactive.active a:hover, #menu-menu-principal .inactive.active a:focus, #menu-menu-principal .inactive.active a:active,
 #menu-main-menu .inactive.active a:hover,
 #menu-main-menu .inactive.active a:focus,
 #menu-main-menu .inactive.active a:active {
-  color: #f79a21;
+  color: #efa900;
 }
 
-/* line 152, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 198, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .header-navbar .navbar-nav {
   float: right;
 }
 
-/* line 157, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 203, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .dropdown-menu > li > a {
   color: #384f9d;
 }
 
-/* line 160, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 206, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .pll-parent-menu-item {
   border-left: 1px solid #ddd;
 }
 
 /* - Breadcrumb -*/
-/* line 166, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 212, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .page-breadcrumb {
   text-align: left;
 }
 
-/* line 170, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 216, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .page-title h1 {
   margin-bottom: 70px;
   font-size: 30px;
-  color: #0e96d0;
+  color: #00a9bc;
   text-transform: uppercase;
   text-align: center;
 }
 
 /* - cookie - */
-/* line 180, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 226, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .cookie-notice-container a {
-  color: #f79a21;
+  color: #efa900;
 }
 
-/* line 182, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 228, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .cookie-notice-container a:hover, .cookie-notice-container a:focus, .cookie-notice-container a:active {
-  color: #ffc774;
+  color: #944c29;
 }
 
-/* line 190, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 236, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 ul {
   font-size: 15px;
 }
 
 /* - Avis - */
-/* line 195, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 241, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .part-testimonials {
   margin: 70px 0;
 }
 
-/* line 200, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 246, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 div.wpcr3_review div.wpcr3_review_title {
   font-size: 16px;
   display: block !important;
 }
 
 /* - sidebar right - */
-/* line 207, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 253, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .sidebar-section-right {
   margin: 0 20px 30px 20px;
   padding: 0;
@@ -327,27 +394,149 @@ div.wpcr3_review div.wpcr3_review_title {
   border-top: 2px solid #ebebeb;
 }
 
-/* line 214, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.sidebar-widget {
+/* line 259, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.sidebar-section-right .sidebar-widget {
   margin-bottom: 0;
   padding: 30px 0;
   border-bottom: 2px solid #ebebeb;
 }
 
+/* line 264, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.sidebar-section-right .sidebar-widget .textwidget,
+.sidebar-section-right .sidebar-widget p,
+.sidebar-section-right .sidebar-widget h3 {
+  margin: 0;
+}
+
+/* line 272, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.sidebar-section-right .sidebar-widget-title h3,
+.sidebar-section-right .sidebar-widget h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
 /* - Liste - */
-/* line 221, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 280, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 ul li {
   padding: 3px 0;
 }
 
+/* line 284, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.callout-btn2,
+a.hrtl-btn,
+.project-scroll-btn li:hover,
+a.works-btn,
+.blog-btn-sm,
+a.more-link,
+.top-contact-detail-section,
+.clients-btn-lg,
+.team-showcase-overlay,
+.blog-post-date-area .date,
+.blog-post-date-area .date,
+.blog-btn-lg,
+.blogdetail-btn a:hover,
+.cont-btn a:hover,
+.sidebar-widget > .input-group > .input-group-addon,
+.sidebar-widget > .input-group > .input-group-addon,
+.sidebar-widget-tags a:hover,
+.navigation.pagination .nav-links .page-numbers.current,
+.navigation.pagination .nav-links a:hover,
+a.error-btn,
+.hc_scrollup,
+.tagcloud a:hover,
+.form-submit input,
+.media-body input[type="submit"],
+.sidebar-widget input[type="submit"],
+.footer-widget-column input[type="submit"],
+.blogdetail-btn,
+.cont-btn button,
+.orange-widget-column > .input-group > .input-group-addon,
+.orange-widget-column-tags a:hover,
+.slider-btn-sm,
+.slide-btn-sm,
+.slider-sm-area a.more-link,
+.blog-pagination span.current,
+.wpcf7-submit,
+.page-title-section,
+ins {
+  background-color: #efa900;
+}
+
+/* line 323, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.service-icon i,
+.portfolio-caption:hover h4 a,
+.portfolio-tabs li.active > a,
+.portfolio-tabs li > a:hover,
+.testmonial-area h4,
+.blog-post-sm a:hover,
+.blog-tags-sm a:hover,
+.blog-sm-area h3 > a:hover,
+.blog-sm-area h3 > a:focus,
+.footer-contact-icon i,
+.footer-addr-icon,
+.footer-blog-post:hover h3 a,
+.footer-widget-tags a:hover,
+.footer-widget-column ul li a:hover,
+.footer-copyright p a:hover,
+.page-breadcrumb > li.active a,
+.about-section h2 > span,
+.blog-post-lg a:hover,
+.blog-tags-lg a:hover,
+.blog-lg-area-full h3 > a:hover,
+.blog-author span,
+.comment-date a:hover,
+.reply a,
+.reply a:hover,
+.sidebar-blog-post:hover h3 a,
+ul.post-content li:hover a,
+.error-404 h1,
+.media-body th a:hover,
+.media-body dd a:hover,
+.media-body li a:hover,
+.blog-post-info-detail a:hover,
+.comment-respond a:hover,
+.blogdetail-btn a,
+.cont-btn a,
+.blog-lg-area-left h3 > a:hover,
+.blog-lg-area-right h3 > a:hover,
+.blog-lg-area-full h3 > a:hover,
+.sidebar-widget > ul > li > a:hover,
+.sidebar-widget table th,
+.footer-widget-column table th,
+.top-header-widget table th,
+.top-contact-detail-section table th,
+blockquote a,
+blockquote a:hover,
+blockquote a:focus,
+#calendar_wrap table > thead > tr > th,
+#calendar_wrap a,
+table tbody a,
+table tbody a:hover,
+table tbody a:focus,
+.format-quote p::before,
+td#prev a,
+td#next a,
+dl > dd > a,
+dl > dd > a:hover,
+.rsswidget:hover,
+.recentcomments a:hover,
+ul > li > a:hover,
+tr.odd a,
+tr.even a,
+p.wp-caption-text a,
+.footer-copyright a,
+.footer-copyright a:hover {
+  color: #efa900;
+}
+
 /* ---- Home ---- */
-/* line 227, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 395, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .carou-direction-nav a {
   opacity: 1;
   background-color: transparent;
 }
 
-/* line 232, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 400, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .text-home-section-content {
   /*display: flex;*/
   /*flex-direction: row;*/
@@ -356,12 +545,12 @@ ul li {
   margin-top: 60px;
 }
 
-/* line 240, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 408, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .thsc-picture img {
   margin: 0 auto;
 }
 
-/* line 244, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 412, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .thsc-text h1,
 .thsc-text h2,
 .thsc-text h3 {
@@ -371,34 +560,62 @@ ul li {
   color: #8b8a8a;
 }
 
-/* line 252, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 420, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .thsc-text h1 {
   margin-top: 25px;
   text-transform: uppercase;
 }
 
-/* line 256, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 424, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .thsc-text p {
   font-weight: 300;
   font-size: 16px;
   color: #8b8a8a;
 }
 
-/* line 263, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 431, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .section-background {
+  margin-top: 80px;
+  padding-bottom: 65px;
+  background-color: #efa900;
+}
+
+/* line 436, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.section-background-footer {
   margin-top: 80px;
   padding-bottom: 65px;
   background-color: #ebebeb;
 }
 
-/* line 269, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 442, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .section-heading-title h2 {
   font-size: 30px;
-  color: #0e96d0;
+  color: #00a9bc;
   text-transform: uppercase;
 }
 
-/* line 276, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 448, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.section-background .section-heading-title h2 {
+  color: #fff;
+}
+
+/* line 451, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.section-background .section-heading-title h2 span {
+  text-transform: lowercase;
+  font-size: 24px;
+}
+
+/* line 458, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.section-programs-button .at-btn-all {
+  background-color: transparent;
+}
+
+/* line 461, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.section-programs-button .at-btn-all:hover, .section-programs-button .at-btn-all:focus, .section-programs-button .at-btn-all:active {
+  background-color: #944c29;
+}
+
+/* line 469, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .index-news-block-container,
 .category-page {
   display: flex;
@@ -406,7 +623,7 @@ ul li {
   justify-content: space-between;
 }
 
-/* line 282, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 475, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .index-news-block {
   display: flex;
   flex-direction: column;
@@ -415,69 +632,105 @@ ul li {
   background-color: #fff;
 }
 
-/* line 289, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 482, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-picture img {
   margin: 0 auto;
 }
 
-/* line 292, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 485, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-infos {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 20px 0 0 25px;
+  padding: 20px 25px 25px 25px;
 }
 
-/* line 297, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 490, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-infos h3,
 .inb-infos p {
-  padding-right: 25px;
   line-height: 1.5;
   color: #443533;
 }
 
-/* line 303, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 495, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-infos h3 {
   margin-bottom: 0;
   font-size: 18px;
   text-transform: uppercase;
 }
 
-/* line 308, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 500, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-infos h3 a {
   color: #443533;
   transition: all 0.3s ease-in-out 0s;
 }
 
-/* line 311, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 503, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-infos h3 a:hover, .inb-infos h3 a:focus {
-  color: #f79a21;
+  color: #efa900;
 }
 
-/* line 317, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 509, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-infos p {
   font-size: 12px;
 }
 
-/* line 322, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 514, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-i-price {
   text-transform: uppercase;
 }
 
-/* line 325, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 517, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .inb-button {
   margin-top: auto;
-  text-align: right;
+  text-align: left;
 }
 
-/* line 330, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 522, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .section-programs-button {
   margin-top: 65px;
   text-align: center;
 }
 
+/* line 527, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.home-big-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #00a9bc;
+  border-bottom: 1px solid #00a9bc;
+  background-color: #ebebeb;
+}
+
+/* line 536, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.home-big-cta p {
+  padding: 20px 0 0 0;
+  font-size: 24px;
+  color: #282828;
+}
+
+/* line 541, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.home-big-cta a {
+  align-self: stretch;
+  display: block;
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #efa900;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+/* line 554, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.home-big-cta a:hover, .home-big-cta a:focus, .home-big-cta a:active {
+  background-color: #944c29;
+}
+
 /* - infos utiles */
-/* line 336, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 563, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-section-usefull-infos {
   display: flex;
   flex-direction: column;
@@ -485,25 +738,25 @@ ul li {
   align-items: center;
 }
 
-/* line 342, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 569, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-picture,
 .hsui-menu {
   flex: 1;
 }
 
-/* line 346, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 573, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-picture {
   display: flex;
   justify-content: center;
 }
 
-/* line 350, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 577, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-menu {
   display: flex;
   align-self: stretch;
 }
 
-/* line 353, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 580, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-menu ul {
   display: flex;
   flex-direction: column;
@@ -514,12 +767,12 @@ ul li {
   list-style-type: none;
 }
 
-/* line 362, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 589, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-menu li {
   padding: 0;
 }
 
-/* line 364, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 591, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-menu li a {
   position: relative;
   display: block;
@@ -532,7 +785,7 @@ ul li {
   transition: all 0.3s ease-in-out 0s;
 }
 
-/* line 375, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 602, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .hsui-menu li a:after {
   position: absolute;
   top: 0;
@@ -545,28 +798,28 @@ ul li {
   line-height: 1.5;
   color: #fff;
   text-align: center;
-  background-color: #ffc774;
+  background-color: #efa900;
   transition: all 0.3s ease-in-out 0s;
 }
 
-/* line 390, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.hsui-menu li a:after:hover {
-  background-color: #f79a21;
+/* line 619, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.hsui-menu li a:hover:after {
+  background-color: #944c29;
 }
 
 /* - Partenaires carousel */
-/* line 401, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 630, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-carousel-partners,
 .home-carousel-partners .col-xs-4 {
   height: 100px;
 }
 
-/* line 405, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 634, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-carousel-partners .col-xs-4 {
   position: relative;
 }
 
-/* line 407, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 636, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .home-carousel-partners .col-xs-4 > img {
   position: absolute;
   top: 50%;
@@ -576,31 +829,31 @@ ul li {
   max-height: 100px;
 }
 
-/* line 418, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 647, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .multi-item-carousel .carousel-inner > .item {
   transition: 500ms ease-in-out left;
 }
 
-/* line 421, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 650, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .multi-item-carousel .carousel-inner .active.left,
 .multi-item-carousel .carousel-inner .active.right {
   left: -33%;
 }
 
-/* line 425, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 654, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .multi-item-carousel .carousel-inner .next,
 .multi-item-carousel .carousel-inner .prev {
   left: 33%;
 }
 
-/* line 430, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 659, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .multi-item-carousel .carouse-control.left,
 .multi-item-carousel .carouse-control.right {
   background-image: none;
 }
 
 @media all and (transform-3d), (-webkit-transform-3d) {
-  /* line 436, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 665, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .multi-item-carousel .carousel-inner > .item {
     transition: 500ms ease-in-out all;
     backface-visibility: visible;
@@ -609,42 +862,37 @@ ul li {
 }
 
 /*Homepage Carousel Bootstrap Slider Section------------------------------------------------------------------*/
-/* line 445, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 674, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .carousel-inner {
   text-align: center;
 }
 
-/* line 448, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 677, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .slide-caption {
   width: 100%;
 }
 
-/* line 451, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 680, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .slide-caption p {
   color: #fff;
   font-size: 12px;
   font-weight: bold;
-  text-shadow: 0 0px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-/* line 457, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 686, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .slide-caption p a {
   text-shadow: none;
 }
 
-/* line 460, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.slide-caption p .at-btn-all {
-  font-size: 12px;
-}
-
-/* line 465, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 691, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .slide-text-bg1 {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
 }
 
-/* line 470, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 696, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .slide-text-bg1 h2 {
   background-color: transparent;
   color: #fff;
@@ -652,11 +900,11 @@ ul li {
   line-height: 40px;
   margin: 0;
   font-weight: bold;
-  text-shadow: 0 0px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
   box-shadow: none;
 }
 
-/* line 480, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 706, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .slide-text-bg2 {
   text-align: left;
   margin: 0 0 20px;
@@ -667,157 +915,240 @@ ul li {
 }
 
 /* ----- Footer ---- */
-/* line 493, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.footer-copyright-section {
-  background-color: #ffc774;
+/* line 719, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  border-bottom: 2px solid #000;
 }
 
-/* line 495, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 729, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-top-logo img {
+  max-width: 90%;
+}
+
+/* line 735, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-top-menu ul {
+  list-style-type: none;
+}
+
+/* line 739, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-top-menu ul li a {
+  color: #fff;
+}
+
+/* line 748, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-top-menu-second ul {
+  list-style-type: none;
+}
+
+/* line 752, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-top-menu-second ul li a {
+  color: #8b8a8a;
+}
+
+/* line 761, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-bottom {
+  text-align: center;
+  border-top: 2px solid #282828;
+}
+
+/* line 766, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-copyright-section {
+  background-color: #1d1d1d;
+}
+
+/* line 768, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .footer-copyright-section p {
   margin-bottom: 5px;
   font-size: 11px;
-  color: #282828;
+  color: #fff;
 }
 
-/* line 500, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 773, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .footer-copyright-section p:first-child {
   font-size: 12px;
 }
 
-/* line 505, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.footer-menu {
-  padding: 60px 0 20px 0;
-  list-style-type: none;
-  text-align: right;
+/* line 778, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-contact-social {
+  float: none;
 }
 
-/* line 509, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.footer-menu li {
-  display: inline-block;
-  padding: 0 10px;
-  font-size: 11px;
-  border-left: 1px solid;
+/* line 782, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-contact-social li.linkedin:hover {
+  background-color: #BD081C;
 }
 
-/* line 515, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.footer-menu li:first-child {
-  border: 0;
+/* line 785, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-contact-social li.skype:hover {
+  background-color: #A23C9F;
 }
 
-/* line 518, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.footer-menu li a {
-  color: #443533;
+/* line 788, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-contact-social li {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
 }
 
-/* line 520, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-.footer-menu li a:hover, .footer-menu li a:focus {
-  color: #000;
+/* line 793, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+.footer-contact-social li > a > i {
+  font-size: 26px;
 }
 
-/* line 533, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 825, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .category-page {
   flex-wrap: wrap;
 }
 
-/* line 535, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 827, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 .category-page .index-news-block {
   flex-basis: calc(50% - 10px);
   margin-bottom: 10px;
   background-color: #ebebeb;
 }
 
-/* line 544, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+/* line 836, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
 #cf7md-form .cf7md-item {
   margin-bottom: 0px;
 }
 
 /* ----- Responsive ----- */
+@media (max-width: 768px) {
+  /* line 845, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .homepage-mycarousel .carousel-inner > .item > img {
+    min-height: 220px;
+  }
+}
+
 @media (min-width: 640px) {
-  /* line 552, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 852, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .index-news-block {
     flex-direction: row;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 564, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-  .home .home-navbar .navbar-nav a {
-    font-size: 14px;
+  /* line 858, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .navbar-default .navbar-nav > li > a {
+    font-size: 18px;
   }
-  /* line 570, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 861, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .slide-caption p {
     font-size: 14px;
   }
-  /* line 575, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 866, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .text-home-section-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  /* line 582, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 873, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .thsc-picture {
     margin-right: 50px;
   }
-  /* line 585, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 876, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .thsc-text h1 {
     margin-top: 0;
   }
-  /* line 590, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 881, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .index-news-block-container,
   .category-page {
     flex-direction: row;
     margin: 0 -5px;
   }
-  /* line 595, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 886, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .index-news-block {
     flex-direction: column;
     margin: 0 5px;
   }
-  /* line 600, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 891, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .home-section-usefull-infos {
     flex-direction: row;
   }
-  /* line 604, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 895, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .hsui-menu ul,
   .hsui-menu li a {
     margin: 0;
   }
-  /* line 608, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 899, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .home-list-category .elementor-image-box-wrapper .elementor-image-box-title {
     top: 20%;
+  }
+  /* line 903, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .home-big-cta {
+    flex-direction: row;
+  }
+  /* line 906, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .home-big-cta p {
+    margin-right: 30px;
+    padding: 20px 0 0 0;
+    font-size: 24px;
+  }
+  /* line 915, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .section-heading-title h2 {
+    font-size: 46px;
+  }
+  /* line 918, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .section-background .section-heading-title h2 span {
+    font-size: 38px;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 616, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 928, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .slide-caption p {
     font-size: 24px;
   }
-  /* line 619, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 931, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .slide-caption a {
+    font-size: 16px;
+  }
+  /* line 935, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .home-list-category .elementor-image-box-wrapper .elementor-image-box-title {
     top: 40%;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 625, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 943, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  nav.navbar-default .navbar-brand.logo-spec-respon {
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  /* line 947, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  nav.navbar-default .navbar-brand.logo-spec-respon img {
+    display: inline-block;
+  }
+  /* line 952, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  nav.navbar-default .navbar-header {
+    align-self: flex-start;
+    margin: 20px 0  20px 18%;
+  }
+  /* line 957, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .slide-caption {
+    top: 70%;
+  }
+  /* line 962, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .home nav.navbar-default {
     position: absolute;
   }
-  /* line 628, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-  .home .slide-caption {
-    top: 70%;
+  /* line 965, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  .home nav.navbar-default .navbar-header {
+    margin: 20px 0  20px 15%;
   }
-  /* line 634, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 972, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .home-navbar .navbar-nav a {
     font-size: 20px;
   }
-  /* line 639, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
-  .slide-caption p {
-    font-size: 30px;
-  }
-  /* line 642, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
+  /* line 980, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours.scss */
   .at-btn-all {
     font-size: 16px;
   }
@@ -830,7 +1161,8 @@ ul li {
 }
 
 /* line 6, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/_variables.scss */
-.font-source-sans-bold, .at-btn-more, .at-btn-all, .inb-infos h3, .inb-infos p, .hsui-menu li a:after {
+.font-source-sans-bold, .at-btn-more,
+.textwidget .at-btn-more, .inb-infos h3, .inb-infos p, .hsui-menu li a:after {
   font-family: 'source_sans_pro', Arial, sans-serif;
   font-weight: bold;
 }
@@ -845,6 +1177,12 @@ ul li {
 .font-source-sans-light {
   font-family: 'source_sans_pro', Arial, sans-serif;
   font-weight: 300;
+}
+
+/* line 18, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/_variables.scss */
+.font-source-sans-medium, .at-btn-all, nav.navbar-default .home-navbar .navbar-nav a, nav.navbar-default .navbar-nav > li > a, .footer-top-menu ul li a, .footer-top-menu-second ul li a {
+  font-family: 'source_sans_pro', Arial, sans-serif;
+  font-weight: 600;
 }
 
 @font-face {
@@ -923,25 +1261,25 @@ ul li {
 /* - formulaires - */
 /* line 25, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 #cf7md-form .mdc-button--primary.mdc-button--raised {
-  background-color: #0e96d0;
+  background-color: #00a9bc;
 }
 
 /* line 28, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 #cf7md-form .mdc-textfield--focused .mdc-textfield__label {
-  color: #0e96d0;
+  color: #00a9bc;
 }
 
 /* line 31, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 #cf7md-form .mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
   /* @alternate */
-  background-color: #0e96d0;
+  background-color: #00a9bc;
 }
 
 /* line 35, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 #cf7md-form .mdc-textfield--theme-dark.mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after,
 #cf7md-form.mdc-theme--dark .mdc-textfield--focused.mdc-textfield--upgraded:not(.mdc-textfield--fullwidth):not(.mdc-textfield--multiline)::after {
   /* @alternate */
-  background-color: #0e96d0;
+  background-color: #00a9bc;
 }
 
 /* line 40, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -950,7 +1288,7 @@ ul li {
 #cf7md-form .mdc-checkbox__native-control:checked ~ .mdc-checkbox__background,
 #cf7md-form .mdc-checkbox__native-control:indeterminate ~ .mdc-checkbox__background,
 #cf7md-form .mdc-radio__native-control:checked + .mdc-radio__background .mdc-radio__outer-circle {
-  border-color: #0e96d0;
+  border-color: #00a9bc;
 }
 
 /* - sidebar - */
@@ -981,7 +1319,7 @@ ul li {
   padding-bottom: 15px;
   font-size: 12px;
   text-transform: uppercase;
-  border-bottom: 1px solid #f79a21;
+  border-bottom: 1px solid #efa900;
 }
 
 /* line 78, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1003,7 +1341,7 @@ ul li {
 
 /* line 88, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .destination-spec-demandes p > a:hover, .destination-spec-demandes p > a:focus, .destination-spec-demandes p > a:active {
-  color: #ffc774;
+  color: #944c29;
 }
 
 /* line 97, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1097,34 +1435,34 @@ ul li {
 
 /* line 164, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.orange a {
-  color: #f79a21;
-  border-color: #f79a21;
+  color: #efa900;
+  border-color: #efa900;
 }
 
 /* line 167, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.orange a:hover, .at-btn.contour.orange a:focus, .at-btn.contour.orange a:active {
-  border-color: #ffc774;
+  border-color: #944c29;
 }
 
 /* line 170, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.orange a:hover:before, .at-btn.contour.orange a:focus:before, .at-btn.contour.orange a:active:before {
-  color: #ffc774;
+  color: #944c29;
 }
 
 /* line 176, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.bleu a {
-  color: #0e96d0;
-  border-color: #0e96d0;
+  color: #00a9bc;
+  border-color: #00a9bc;
 }
 
 /* line 179, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.bleu a:hover, .at-btn.contour.bleu a:focus, .at-btn.contour.bleu a:active {
-  border-color: #f79a21;
+  border-color: #efa900;
 }
 
 /* line 182, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.bleu a:hover:before, .at-btn.contour.bleu a:focus:before, .at-btn.contour.bleu a:active:before {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 188, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1135,12 +1473,12 @@ ul li {
 
 /* line 191, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.gris a:hover, .at-btn.contour.gris a:focus, .at-btn.contour.gris a:active {
-  border-color: #f79a21;
+  border-color: #efa900;
 }
 
 /* line 194, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.gris a:hover:before, .at-btn.contour.gris a:focus:before, .at-btn.contour.gris a:active:before {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 200, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1151,12 +1489,12 @@ ul li {
 
 /* line 203, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.noir a:hover, .at-btn.contour.noir a:focus, .at-btn.contour.noir a:active {
-  border-color: #f79a21;
+  border-color: #efa900;
 }
 
 /* line 206, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.contour.noir a:hover:before, .at-btn.contour.noir a:focus:before, .at-btn.contour.noir a:active:before {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 214, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1168,32 +1506,32 @@ ul li {
 
 /* line 219, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.orange a {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 221, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.orange a:hover, .at-btn.vide.orange a:focus, .at-btn.vide.orange a:active {
-  color: #ffc774;
+  color: #944c29;
 }
 
 /* line 225, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.orange a:hover:before, .at-btn.vide.orange a:focus:before, .at-btn.vide.orange a:active:before {
-  color: #ffc774;
+  color: #944c29;
 }
 
 /* line 230, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.bleu a {
-  color: #0e96d0;
+  color: #00a9bc;
 }
 
 /* line 232, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.bleu a:hover, .at-btn.vide.bleu a:focus, .at-btn.vide.bleu a:active {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 236, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.bleu a:hover:before, .at-btn.vide.bleu a:focus:before, .at-btn.vide.bleu a:active:before {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 241, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1203,12 +1541,12 @@ ul li {
 
 /* line 243, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.gris a:hover, .at-btn.vide.gris a:focus, .at-btn.vide.gris a:active {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 247, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.gris a:hover:before, .at-btn.vide.gris a:focus:before, .at-btn.vide.gris a:active:before {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 252, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1218,34 +1556,34 @@ ul li {
 
 /* line 254, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.noir a:hover, .at-btn.vide.noir a:focus, .at-btn.vide.noir a:active {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 258, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.vide.noir a:hover:before, .at-btn.vide.noir a:focus:before, .at-btn.vide.noir a:active:before {
-  color: #f79a21;
+  color: #efa900;
 }
 
 /* line 269, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.plein.orange a {
   color: #fff;
-  background-color: #f79a21;
+  background-color: #efa900;
 }
 
 /* line 272, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.plein.orange a:hover, .at-btn.plein.orange a:focus, .at-btn.plein.orange a:active {
-  background-color: #ffc774;
+  background-color: #944c29;
 }
 
 /* line 281, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.plein.bleu a {
   color: #fff;
-  background-color: #0e96d0;
+  background-color: #00a9bc;
 }
 
 /* line 284, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.plein.bleu a:hover, .at-btn.plein.bleu a:focus, .at-btn.plein.bleu a:active {
-  background-color: #f79a21;
+  background-color: #efa900;
 }
 
 /* line 293, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1257,7 +1595,7 @@ ul li {
 /* line 296, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.plein.gris a:hover, .at-btn.plein.gris a:focus, .at-btn.plein.gris a:active {
   color: #fff;
-  background-color: #f79a21;
+  background-color: #efa900;
 }
 
 /* line 306, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
@@ -1268,7 +1606,7 @@ ul li {
 
 /* line 309, F:/Dropbox/madamcom/algerie-tours.com/algtou/wp-content/themes/shk-corporate/sass/algerie-tours-destination.scss */
 .at-btn.plein.noir a:hover, .at-btn.plein.noir a:focus, .at-btn.plein.noir a:active {
-  background-color: #f79a21;
+  background-color: #efa900;
 }
 
 @media screen and (max-width: 767px) {

@@ -44,21 +44,21 @@ function shk_corporate_widgets_init() {
 		'name' => __('Sidebar widget area category', 'shk-corporate' ),
 		'id' => 'sidebar-primary',
 		'description' => __( 'Sidebar widget area category', 'shk-corporate' ),
-		'before_widget' => '<div class="sidebar-widget">',
+		'before_widget' => '<div class="sidebar-widget sidebar-category-top">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="sidebar-widget-title"><h3>',
 		'after_title' => '</h3></div>',
 	) );
 
-//	register_sidebar( array(
-//		'name' => __('Sidebar widget area travel', 'shk-corporate' ),
-//		'id' => 'sidebar-travel',
-//		'description' => __( 'Sidebar widget area travel', 'shk-corporate' ),
-//		'before_widget' => '<div class="sidebar-widget">',
-//		'after_widget' => '</div>',
+	register_sidebar( array(
+		'name' => __('Sidebar widget area category Top', 'shk-corporate' ),
+		'id' => 'sidebar-category-top',
+		'description' => __( 'Sidebar widget category top', 'shk-corporate' ),
+		'before_widget' => '<div class="sidebar-widget sidebar-category-top">',
+		'after_widget' => '</div>',
 //		'before_title' => '<div class="sidebar-widget-title"><h3>',
 //		'after_title' => '</h3></div>',
-//	) );
+	) );
 
 //Header sidebar
 /*	register_sidebar( array(
@@ -140,6 +140,7 @@ function register_menus_algerie_tours() {
         array(
             'home-info-usefull' => __( 'Home Usefull Informations' ),
             'footer-menu' => __( 'Menu Footer' ),
+            'footer-menu-secondary' => __( 'Menu Footer Secondary' ),
         )
     );
 }

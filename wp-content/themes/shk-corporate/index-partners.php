@@ -4,20 +4,20 @@ $appointment_options=theme_setup_data();
 $slider_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options);
 if($slider_setting['home_banner_enabled'] == 0 ) {
     ?>
-    <div class="blog-section section-background">
+    <div class="blog-section section-background-footer">
         <div class="container">
 
             <!-- Section Title -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading-title">
-                        <h2><?php _e('Our partners', 'shk-corporate'); ?></h2>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="row">-->
+<!--                <div class="col-md-12">-->
+<!--                    <div class="section-heading-title">-->
+<!--                        <h2>--><?php //_e('Our partners', 'shk-corporate'); ?><!--</h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="home-carousel-partners">
-                <div id="carousel-partners" class="carousel slide <?php echo $slider_setting['slider_options']; ?> multi-item-carousel"data-ride="carousel" data-interval="2000" >
+                <div id="carousel-partners" class="carousel slide <?php echo $slider_setting['slider_options']; ?> multi-item-carousel" data-ride="carousel" data-interval="2000" >
                     <!-- Indicators -->
                     <?php
                     if (pll_current_language() == 'fr') {
