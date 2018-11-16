@@ -59,7 +59,7 @@
 <?php } ?>
 <!--Logo & Menu Section-->	
 <nav class="navbar navbar-default">
-	<div class="container">
+	<div class="container" data-action="menu">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 				<?php if($header_setting['text_title'] == 1) { ?>
@@ -68,15 +68,15 @@
 					 if($header_setting['enable_header_logo_text'] == 1) {
 					     echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>";
 					 } elseif($header_setting['upload_image_logo']!='') {
-                        if( is_front_page() ) {
-                            ?>
-                            <img class="img-responsive" src="/wp-content/themes/shk-corporate/images/logo-algerie-tours-blanc-long.png"/>
-                            <?php
-                        } else { ?>
+//                        if( is_front_page() ) {
+//                            ?>
+<!--                            <img class="img-responsive" src="/wp-content/themes/shk-corporate/images/logo-algerie-tours-blanc-long.png"/>-->
+<!--                            --><?php
+//                        } else { ?>
                             <img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>"
                                  style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
                             <?php
-                        }
+//                        }
 					 } else {
 					     ?>
 					    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/shk_corporate.png">

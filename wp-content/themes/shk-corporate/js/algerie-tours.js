@@ -54,4 +54,35 @@ jQuery(function($) {
 
     });
 
+    // fonction pour le menu qui reste colé en haut quand on scroll
+    if (window.matchMedia("(min-width: 1200px)").matches) {
+        var positionHeight = $(window).scrollTop(), // je rÃ©cupÃ¨re la position de la fenÃªtre
+            // heightHeader = cssVariables['headerDesktopHeight'] * 10, // taille du header en rem -> * 10 pour le passer en px car sur ce site 1rem = 10px
+            containerMenu = $('[data-action="menu"]'),
+            scrollMenu = containerMenu.offset().top; // je rÃ©cupÃ©re la position de la sticky bar
+
+        $(document).on('scroll', function () {
+            var scrollHeight = $(document).scrollTop(), // je rÃ©cupÃ¨re la position du document lors du scroll
+                scrollHeightMenu = $(window).scrollTop(); // je rÃ©cupÃ¨re la position du scroll en cours + la hauteur du header
+
+            if (scrollHeightMenu > scrollMenu) {
+                // si le scroll courrant est plus grand que la position de la sticky barre
+                containerMenu.addClass('menu-scrolled');
+            } else {
+                containerMenu.removeClass('menu-scrolled')/*.removeClass('sticky-scrolled-with-preheader')*/;
+            }
+
+            // // si la position du document aprÃ¨s scroll est plus grande que la position de la fen^tre alors je cache le pre-header
+            // if (scrollHeight > positionHeight) {
+            //     if (scrollHeight > 50) {
+            //         containerMenu.removeClass('sticky-scrolled-with-preheader');
+            //     }
+            //     // sinon
+            // } else {
+            //     containerMenu.addClass('sticky-scrolled-with-preheader');
+            // }
+            positionHeight = scrollHeight;
+        });
+    }
+
 });

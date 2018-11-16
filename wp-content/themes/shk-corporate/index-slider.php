@@ -104,6 +104,9 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
     $id_accueil = get_option('page_on_front');
     $text_under_slider = get_post_meta( $id_accueil, 'home_texte_sous_slider', true );
     $anchor_under_slider = get_post_meta( $id_accueil, 'home_texte_lien_sous_slider', true );
+    $mail_under_slider = get_post_meta( $id_accueil, 'home_texte_mail_sous_slider', true );
+    $phone_under_slider = get_post_meta( $id_accueil, 'home_texte_phone_sous_slider', true );
+    $phone_under_slider_change = '+33(0)'.substr(str_replace('.','', $phone_under_slider), 1);
         if (pll_current_language() == 'fr') {
             $thePage = 20;
         } else {
@@ -113,7 +116,9 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 
     ?>
     <div class="home-big-cta">
-        <p class=""><?php echo $text_under_slider; ?></p>
-        <a href="<?php echo get_page_link($thePage); ?>"><?php echo $anchor_under_slider; ?></a>
+        <a href="mailto:<?php echo $mail_under_slider ?>" class="home-big-cta-mail"><?php echo $mail_under_slider ?></a>
+        <p class="home-big-cta-text"><?php echo $text_under_slider; ?></p>
+        <a href="<?php echo get_page_link($thePage); ?>" class="home-big-cta-cta"><?php echo $anchor_under_slider; ?></a>
+        <a href="tel:<?php echo $phone_under_slider_change; ?>" class="home-big-cta-phone"><?php echo $phone_under_slider; ?></a>
     </div>
 <?php } ?>
